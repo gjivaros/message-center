@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/core/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/core/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/core",
+  "projects": {
+    "core": {
+      "type": "application",
+      "root": "apps/core",
+      "entryFile": "main",
+      "sourceRoot": "apps/core/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/core/tsconfig.app.json"
+      }
+    },
+    "messenger-connector": {
+      "type": "application",
+      "root": "apps/messenger-connector",
+      "entryFile": "main",
+      "sourceRoot": "apps/messenger-connector/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/messenger-connector/tsconfig.app.json"
+      }
+    },
+    "whatsapp-connector": {
+      "type": "application",
+      "root": "apps/whatsapp-connector",
+      "entryFile": "main",
+      "sourceRoot": "apps/whatsapp-connector/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/whatsapp-connector/tsconfig.app.json"
+      }
+    },
+    "telegram-connector": {
+      "type": "application",
+      "root": "apps/telegram-connector",
+      "entryFile": "main",
+      "sourceRoot": "apps/telegram-connector/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/telegram-connector/tsconfig.app.json"
+      }
+    },
+    "contants": {
+      "type": "library",
+      "root": "libs/contants",
+      "entryFile": "index",
+      "sourceRoot": "libs/contants/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/contants/tsconfig.lib.json"
+      }
+    },
+    "worker": {
+      "type": "application",
+      "root": "apps/worker",
+      "entryFile": "main",
+      "sourceRoot": "apps/worker/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/worker/tsconfig.app.json"
+      }
+    },
+    "data-source": {
+      "type": "library",
+      "root": "libs/data-source",
+      "entryFile": "index",
+      "sourceRoot": "libs/data-source/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/data-source/tsconfig.lib.json"
+      }
+    }
+  }
+}

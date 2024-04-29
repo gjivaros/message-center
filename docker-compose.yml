@@ -1,0 +1,23 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.7-management-alpine
+    container_name: rabbitmq-kamgo
+    ports:
+        - 5672:5672 #communication between the nodes and CLI tool
+        - 15672:15672 #communication with the web management API
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:14
+    container_name: postgres-kamgo
+    ports:
+      - "5433:5432"
+    restart: always
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - .env
